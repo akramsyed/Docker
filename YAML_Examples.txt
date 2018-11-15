@@ -1,0 +1,64 @@
+#YAML- Yet ANother markup language or Ain't Markup language used to represent data
+
+# Example1: Key Value Pair
+
+Fruit: Apple
+Vegetable: Carrot
+Liquid: water
+Meat: chicken
+
+# Example 2: Array/Lists ( - represents an element of an array)
+
+Fruits:
+- Orange
+- Apple
+
+Vegetables:
+- Carrot
+- Okra
+- Tomato
+
+# Example 3: Dictionary/Map ( Blank space before each item should be same/aligned in a map)
+# Use equal number of spaces
+
+Banana:
+       Calories: 300
+       Fat: 0.4 g
+       Carbs: 28 g
+Grapes:
+       Calories: 62
+       Fat: 0.3g
+       Carbs: 16g
+
+# Mixed list with Key Value/Dictionary/List
+
+Fruits:
+   -   Banana:
+		Calories: 105
+		Fat: .4 g
+   -   Grapes: 
+		Calories: 103
+		Fat: 0.3 g
+
+# Example 5: List of dictionaries
+
+Employee:
+  Name: Jacob
+  Sex: Male
+  Age: 30
+  Title: Systems Engineer
+  Projects:
+    - Automation
+    - Support
+  Payslips:
+   - Month: June
+     Wage: 4000
+   - Month: July
+     Wage: 4500
+   - Month: August
+     Wage: 4000
+    
+
+# Dictionary is an urorederd collection whereas list an ordered collection
+
+========================================

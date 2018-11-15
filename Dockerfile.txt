@@ -1,0 +1,20 @@
+FROM Ubuntu:17.10
+RUN apt-get update
+RUN apt-get install python
+RUN pip install flask
+RUN pip install flask-mysql
+
+COPY . /opt/source-code
+
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+
+
+================================
+# Command to create the image
+
+docker build -f Dockerfile -t akramsyed/myfirstimage
+
+# Command to push it to the Repository
+
+docker push akramsyed/myfirstimage -u akramsyed
+

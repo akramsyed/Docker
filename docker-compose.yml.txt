@@ -1,0 +1,12 @@
+services
+ web
+   image: "simple-webapp"
+   deploy:
+       replicas: 5
+  database:
+    image: "mysql"
+
+
+
+
+ 

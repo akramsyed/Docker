@@ -1,0 +1,38 @@
+docker pull -all-tags
+
+================
+docker pull registry.ng.bluemix.net/wcsv9ent/ts-app:9.0.0.6
+
+docker pull registry.ng.bluemix.net/wcsv9ent/ts-web:9.0.0.6
+docker pull registry.ng.bluemix.net/wcsv9ent/crs-app:9.0.0.6
+docker pull registry.ng.bluemix.net/wcsv9ent/search-app:9.0.0.6
+docker pull registry.ng.bluemix.net/wcsv9ent/xc-app:9.0.0.6
+docker pull registry.ng.bluemix.net/wcsv9ent/ts-utils:9.0.0.6
+
+-=======================
+
+ docker login -u akramsyed github.com
+
+
+======
+docker tag cebee0eab3b7 docker.io/akramsyed/wcs9-ts-app
+
+====
+Starting the WCS9 containers with port 9043 and 9060 mapped:
+
+docker run -d -p 10.16.213.5:8000:8000 -p 10.16.213.5:8001:8001 -p 10.16.213.5:8003:8003 -p 10.16.213.5:8004:8004 -p 10.16.213.5:80:80 -p 10.16.213.5:443:443 -p 10.16.213.5:5443:5443 -e LICENSE="accept" docker.io/akramsyed/wcs9-ts-web
+
+docker run -d -p 9060:9060 -p 443:9043 -e LICENSE="accept" docker.io/akramsyed/wcs9-ts-app
+
+
+docker run -d -p 10.16.213.5:8000-8004:8000-8004 -p 10.16.213.5:443:443 -e LICENSE="accept" docker.io/akramsyed/wcs9-ts-web
+
+
+
+====
+#JEnkins
+docker run -d -v /opt/jenkins:/var/jenkins_home -p 8080:8080 jenkins
+
+# official WCS9
+
+docker run -d -it -e LICENSE="accept" -p 9060:9060 -p 9043:9043 docker.io/akramsyed/wcs9-ts-app

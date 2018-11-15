@@ -1,0 +1,73 @@
+docker run -it centos bash  # login to Centos session
+
+
+docker run -d centos sleep 20  # -d...runs in background
+
+docker stop confident_mccarthy  ==# To stop a running container
+
+
+docker ps
+
+docker ps -a
+
+docker images     # List the images
+
+ # remove the images
+
+docker rmi <imagename>  
+
+
+#Execute a command on a running container
+
+docker exec <Docker ID> <Command>
+
+
+============================================================
+
+
+To run a different version use tags(version)
+
+docker run ubuntu:17:04
+=====================
+
+docker run -d ubuntu:17:04 ( d for detach)
+docker attach <container id>  ( to bring the detached container to foreground)
+
+========
+
+doker run -d <command>  # waits for the input
+
+===============
+
+
+#Mapping VM's local port 80 to docker containers webapp port 5000
+
+docker run -p 80:5000 mmushad/simple-webapp
+
+============
+
+# docker run mysql
+
+# The data is in /var/lib/mysql
+
+# When you run: docker rm mysql     ( the data will be gone from /var/lib/mysql)
+
+# To persist mysql data use the below
+
+docker run -v /opt/<customdatadir>:/var/lib/mysql mysql  ( /opt/<customdatadir> is outside docker container)
+
+# When you run: docker rm mysql     ( the data still be available)
+
+==============
+
+#To find the IP address of docker internal run
+
+docker ps
+docker inspect <container id>   # You can find the docker internal IP
+==============================
+
+# TO run jenkins and access on port 80 from PC browser and persist the data to /opt/jenkins/data
+
+docker run -d -p 80:8080 -v /opt/jenkins:/var/jenkins_home jenkins
+
+================================================================

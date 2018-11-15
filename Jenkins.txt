@@ -1,0 +1,6 @@
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+0aee7a1110364569b51ef40b01310d0b
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
